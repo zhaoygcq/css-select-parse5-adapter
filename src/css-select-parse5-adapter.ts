@@ -15,8 +15,6 @@
 import {Adapter as CSSSelectAdapter, Predicate} from 'css-select';
 import {Attribute, Element, Node, TreeAdapter} from 'parse5';
 
-const defaultTreeAdapter = require('parse5/lib/tree-adapters/default');
-
 /**
  * This is an implementation of the Adapter interface from `css-select` package
  * that is bound to a specific `parse5` `TreeAdapter`.  Unless you need to bind
@@ -136,10 +134,3 @@ export class Parse5Adapter implements CSSSelectAdapter<Node, Element> {
     return undefined;
   }
 }
-
-/**
- * This is an instance of the `Parse5Adapter` class which uses the
- * `defaultTreeAdapter` from `parse5` to manipulate the AST.  This
- * is most likely what you'll want to import.
- */
-export const parse5Adapter = new Parse5Adapter(defaultTreeAdapter);
